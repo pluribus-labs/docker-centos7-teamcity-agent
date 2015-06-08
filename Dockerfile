@@ -10,3 +10,4 @@ RUN adduser teamcity
 
 EXPOSE 9090
 CMD sudo -u teamcity -s -- sh -c "TEAMCITY_SERVER=$TEAMCITY_SERVER bash /agent-setup.sh run"
+
