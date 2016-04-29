@@ -5,7 +5,8 @@ FROM pluribuslabs/centos7-oracle-jdks-7-8
 MAINTAINER Pluribus Labs Docker Dev <docker-dev@pluribuslabs.com>
 
 ADD agent-setup.sh /agent-setup.sh
-RUN yum -y install wget unzip sudo docker && \
+RUN yum -y update && \
+    yum -y install wget unzip sudo docker && \
     adduser teamcity
 
 EXPOSE 9090
