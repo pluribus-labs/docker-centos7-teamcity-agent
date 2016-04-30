@@ -7,7 +7,6 @@ MAINTAINER Pluribus Labs Docker Dev <docker-dev@pluribuslabs.com>
 ADD agent-setup.sh /agent-setup.sh
 RUN yum -y update && \
     yum -y upgrade && \
-    yum -y install iputils && \
     yum -y install wget unzip sudo docker && \
     adduser teamcity
 
