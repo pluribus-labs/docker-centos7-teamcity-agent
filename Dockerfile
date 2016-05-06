@@ -1,4 +1,4 @@
-# docker run -e TEAMCITY_SERVER=http://teamcity:8111 -dt -p 9090:9090 pluribuslabs/centos7-teamcity-agent
+# docker run -e TEAMCITY_SERVER=http://teamcity:8111 -v /var/run/docker.sock:/var/run/docker.sock --privileged -dt -p 9090:9090 pluribuslabs/centos7-teamcity-agent 
 
 FROM pluribuslabs/centos7-oracle-jdks-7-8
 
