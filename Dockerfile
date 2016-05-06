@@ -7,8 +7,9 @@ MAINTAINER Pluribus Labs Docker Dev <docker-dev@pluribuslabs.com>
 ADD agent-setup.sh /agent-setup.sh
 RUN yum -y update && \
     yum -y upgrade && \
-    yum -y install wget unzip sudo && \
-    adduser teamcity;
+    yum -y install wget unzip sudo docker && \
+    adduser teamcity && \
+    echo "teamcity ALL=(ALL)   NOPASSWD:ALL" >> /etc/sudoers.d/teamcity ;
 
 EXPOSE 9090
 CMD sudo -u teamcity -s -- sh -c "TEAMCITY_SERVER=$TEAMCITY_SERVER bash /agent-setup.sh run"
