@@ -5,9 +5,11 @@ FROM pluribuslabs/centos7-oracle-jdks-7-8
 MAINTAINER Pluribus Labs Docker Dev <docker-dev@pluribuslabs.com>
 
 ADD agent-setup.sh /agent-setup.sh
+ADD docker.repo /etc/yum.repos.d/docker.repo
+
 RUN yum -y update && \
     yum -y upgrade && \
-    yum -y install wget unzip sudo docker ;
+    yum -y install wget unzip sudo docker-engine ;
 
 EXPOSE 9090
 CMD TEAMCITY_SERVER=$TEAMCITY_SERVER; bash /agent-setup.sh run
