@@ -9,7 +9,7 @@ ADD docker.repo /etc/yum.repos.d/docker.repo
 
 RUN yum -y update && \
     yum -y upgrade && \
-    yum -y install wget unzip sudo docker-engine ;
+    yum -y install wget unzip sudo docker-engine-1.11.2-1 ;
 
 EXPOSE 9090
 CMD TEAMCITY_SERVER=$TEAMCITY_SERVER; bash /agent-setup.sh run
